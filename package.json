@@ -5,7 +5,7 @@
   "main": "index.js",
   "preferGlobal": "true",
   "bin": {
-    "react-component-gen": "bin/react-comp-gen.js"
+    "react-component-gen": "bin/react-component-gen.js"
   },
   "scripts": {
     "start": "node index.js",
