@@ -1,0 +1,29 @@
+{
+  "name": "react-component-gen",
+  "version": "1.0.0",
+  "description": "React component generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markmur/react-component-gen.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "generator"
+  ],
+  "author": "Mark Murray <mark@boxfish.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markmur/react-component-gen/issues"
+  },
+  "homepage": "https://github.com/markmur/react-component-gen#readme",
+  "dependencies": {
+    "fs-path": "0.0.22",
+    "inquirer": "^1.1.2"
+  }
+}
