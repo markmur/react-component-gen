@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "React component generator",
   "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "react-component-gen": "bin/react-comp-gen.js"
+  },
   "scripts": {
     "start": "node index.js",
     "test": "npm test"

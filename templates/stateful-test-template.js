@@ -1,12 +1,3 @@
-/**
- * GLOBAL IMPORTS
- * --------------
- * The following modules are available globally throughout the tests and should
- * not be imported again:
- *
- * Sinon, Chai, Chai As Promised, Mocha, jQuery, Enzyme, React and ReactTestUtils
- */
-
 import $NAME from './$NAME';
 
 describe('<$NAME />', () => {

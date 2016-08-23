@@ -1,7 +1,10 @@
-import React from 'react';
-import BaseComponent from 'components/BaseComponent';
+import React, { Component, PropTypes } from 'react';
 
-class $NAME extends BaseComponent {
+const propTypes = {};
+
+const defaultProps = {};
+
+class $NAME extends Component {
   constructor(props) {
     super(props);
 
@@ -18,10 +21,7 @@ class $NAME extends BaseComponent {
   }
 }
 
-$NAME.defaultProps = {
-};
-
-$NAME.propTypes = {
-};
+$NAME.defaultProps = defaultProps;
+$NAME.propTypes = propTypes;
 
 export default $NAME;

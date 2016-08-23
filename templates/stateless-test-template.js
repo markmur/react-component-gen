@@ -1,19 +1,13 @@
-import { mount, shallow } from 'enzyme';
-import { expect } from 'chai';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { spy } from 'sinon';
-
-const $NAME = require('./$NAME.jsx').default;
+import $NAME from './$NAME';
 
 describe('<$NAME />', () => {
+  var component;
+  var node;
 
-  var comp;
+  it('should shallow mount', done => {
 
-  it('calls componentDidMount', () => {
-    spy($NAME.prototype, 'componentDidMount');
-    comp = mount(<$NAME />);
-    expect($NAME.prototype.componentDidMount.calledOnce).to.equal(true);
+    component = shallow(<$NAME />);
+    node = component.node;
+    done();
   });
-
 });

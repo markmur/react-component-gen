@@ -1,4 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+
+const propTypes = {};
+
+const defaultProps = {};
 
 function $NAME(props) {
   return (
@@ -8,8 +12,8 @@ function $NAME(props) {
   );
 }
 
-$NAME.propTypes = {};
+$NAME.propTypes = propTypes;
 
-$NAME.defaultProps = {};
+$NAME.defaultProps = defaultProps;
 
 export default $NAME;
