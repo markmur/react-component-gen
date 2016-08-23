@@ -1,14 +1,18 @@
 'use strict';
 
-var inquirer = require('inquirer');
-var fs = require('fs');
-var fsPath = require('fs-path');
+const inquirer = require('inquirer');
+const fs = require('fs');
+const fsPath = require('fs-path');
 
-var stateful = fs.readFileSync('./templates/stateful-template.js', 'utf8');
-var statefulTest = fs.readFileSync('./templates/stateful-test-template.js', 'utf8');
+function getTemplate(path) {
+  return `${__dirname}/templates/${path}`;
+} 
 
-var stateless = fs.readFileSync('./templates/stateless-template.js', 'utf8');
-var statelessTest = fs.readFileSync('./templates/stateless-test-template.js', 'utf8');
+var stateful = fs.readFileSync(getTemplate('stateful-template.js'), 'utf8');
+var statefulTest = fs.readFileSync(getTemplate('stateful-test-template.js'), 'utf8');
+
+var stateless = fs.readFileSync(getTemplate('stateless-template.js'), 'utf8');
+var statelessTest = fs.readFileSync(getTemplate('stateless-test-template.js'), 'utf8');
 
 /**
  * Generate the component/test template
