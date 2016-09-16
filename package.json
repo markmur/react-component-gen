@@ -18,7 +18,11 @@
   "keywords": [
     "react",
     "component",
-    "generator"
+    "generator",
+    "generate",
+    "stateful",
+    "stateless",
+    "boilerplate"
   ],
   "author": "Mark Murray <mark@boxfish.com>",
   "license": "MIT",
