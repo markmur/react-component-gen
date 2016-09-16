@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/markmur/react-component-gen#readme",
   "dependencies": {
+    "colors": "^1.1.2",
     "fs-path": "0.0.22",
     "inquirer": "^1.1.2"
   }

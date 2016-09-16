@@ -4,13 +4,17 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const fsPath = require('fs-path');
 
+require('colors');
+
 function getTemplate(path) {
   return `${__dirname}/templates/${path}`;
-} 
+}
 
+// STATEFUL TEMPLATES
 var stateful = fs.readFileSync(getTemplate('stateful-template.js'), 'utf8');
 var statefulTest = fs.readFileSync(getTemplate('stateful-test-template.js'), 'utf8');
 
+// STATELESS TEMPLATES
 var stateless = fs.readFileSync(getTemplate('stateless-template.js'), 'utf8');
 var statelessTest = fs.readFileSync(getTemplate('stateless-test-template.js'), 'utf8');
 
@@ -48,24 +52,39 @@ inquirer.prompt([
   {
     type: 'input',
     name: 'name',
-    message: 'What would you like to name it?'
+    message: 'What would you like to name it?',
+    validate(value) {
+      var trimmed = value.trim();
+
+      if (!trimmed) {
+        return 'You must give your component a name.';
+      }
+
+      return true;
+    }
   },
   {
     type: 'input',
     name: 'path',
-    message: 'Where would you like to generate it? /assets/components/'
+    message: 'Where would you like to generate it? (e.g src/ or components/)'
   },
   {
     type: 'confirm',
     name: 'test',
     message: 'Would you like to generate a test file?'
   }
-]).then(function (answers) {
+]).then((answers) => {
 
   var type = answers.type,
-      name = answers.name,
-      path = answers.path,
+      name = answers.name.trim(),
+      path = answers.path.trim(),
       test = answers.test;
+
+  // REPLACE ANY SPACES
+  name = name.replace(/\s/ig, '');
+
+  // ENSURE FIRST CHARACTER IS UPPERCASE
+  name = name.charAt(0).toUpperCase() + name.slice(1);
 
   var template, testTemplate;
 
@@ -78,6 +97,11 @@ inquirer.prompt([
     testTemplate = statelessTest;
   }
 
+  // REMOVE INITIAL SLASH FROM PATH
+  if (path.charAt(0) === '/') {
+    path = path.slice(1);
+  }
+
   // REMOVE TRAILING SLASH FROM PATH
   if (path.lastIndexOf('/') > -1) {
     path = path.substring(0, path.lastIndexOf('/'));
@@ -85,9 +109,9 @@ inquirer.prompt([
 
   // FORMAT THE PATH
   if (path) {
-    path = `./assets/components/${path}/${name}`;
+    path = `${path}/${name}`;
   } else {
-    path = `./assets/components/${name}`;
+    path = `${name}`;
   }
 
   // GENERATE THE COMPONENT
