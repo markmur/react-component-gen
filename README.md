@@ -13,3 +13,5 @@ Usage
 ```bash
 react-component-gen
 ```
+
+![react-component-gen](http://i.imgur.com/keAQ1E7.gif)
