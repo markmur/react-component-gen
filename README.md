@@ -14,4 +14,4 @@ Usage
 react-component-gen
 ```
 
-![react-component-gen](http://i.imgur.com/keAQ1E7.gif)
+![react-component-gen](http://i.imgur.com/7SrkJn9.gif)
