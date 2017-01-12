@@ -102,9 +102,9 @@ inquirer.prompt([
     path = path.slice(1);
   }
 
-  // REMOVE TRAILING SLASH FROM PATH
-  if (path.lastIndexOf('/') > -1) {
-    path = path.substring(0, path.lastIndexOf('/'));
+  // ADD SLASH IF MISSING
+  if (path.charAt(path.length - 1) !== '/') {
+    path = `${path}/`;
   }
 
   // FORMAT THE PATH
